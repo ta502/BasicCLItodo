@@ -1,3 +1,5 @@
+// Note: this file contains Task class.
+
 public class Task {
     public int priority;
     public boolean isCompleted;
