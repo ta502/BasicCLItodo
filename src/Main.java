@@ -21,9 +21,13 @@ public class Main {
                 switch (userInput) {
                     case 0 -> System.exit(0); // Exit the program
                     // List tasks
-                    case 1 -> tasks.forEach((key, task) ->
-                        System.out.println("Task: " + task.taskContent + " | Priority: " + task.priority + " | Completed: " + task.isCompleted));
+                    case 1 -> {
+                        tasks.forEach((key, task) ->
+                                System.out.println("Task: " + task.taskContent + " | Priority: " + task.priority + " | Completed: " + task.isCompleted));
+                        System.out.println("0 = Low | 1 = Medium | 2 = High");
+                    }
                     case 2 -> {
+                        System.out.println("Info: You're creating a task.");
                         // Add task
                         System.out.println("Task content:");
                         String userInput2 = scan.nextLine();
@@ -40,12 +44,14 @@ public class Main {
                         tasks.put(task.taskContent, task);
                     }
                     case 3 -> {
+                        System.out.println("Info: You're removing a task.");
                         // Remove Task
                         System.out.println("Content of the task you want to remove?");
                         String userInput3 = scan.nextLine();
                         tasks.remove(userInput3);
                     }
                     case 4 -> {
+                        System.out.println("Info: You're completing a task.");
                         // Complete Task
                         System.out.println("Content of the task you want to complete?");
                         String userInput3 = scan.nextLine();
